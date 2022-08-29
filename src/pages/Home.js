@@ -31,7 +31,6 @@ const Home = () => {
           flexWrap: 'wrap',
           height: '100%',
           justifyContent: 'center',
-          flex: 10
         }}
       >
         {products
