@@ -30,7 +30,6 @@ const Orders = () => {
           width: '100%',
           maxWidth: '800px',
           alignSelf: 'center',
-          padding: '1rem',
         }}
       > 
         {orders.map((order) => (
