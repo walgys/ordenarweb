@@ -67,7 +67,8 @@ function App() {
                 maxWidth: '1200px',
                 borderLeft: '1px solid gainsboro',
                 borderRight: '1px solid gainsboro',
-                backgroundColor: 'white'
+                backgroundColor: 'white',
+                flex: 1
               }}
             >
               {user && <TopBar />}
