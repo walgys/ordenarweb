@@ -33,7 +33,8 @@ const Checkout = () => {
     }
   };
   return (
-    <>
+  
+    <div>
       <div className="no-scroll" style={{ height: '100%', overflow: 'scroll' }}>
         {cart.products.length === 0 && <Typography variant='h5' align='center'>El carrito está vacío</Typography>}
         {cart.products.length > 0 && cart.products.map((product) => {
@@ -98,7 +99,7 @@ const Checkout = () => {
       >
         Realizar Pedido
       </Button>
-    </>
+    </div>
   );
 };
 
