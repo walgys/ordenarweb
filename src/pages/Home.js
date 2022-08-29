@@ -22,6 +22,7 @@ const Home = () => {
       <div
         className="no-scroll"
         style={{
+          padding: '1rem',
           overflow: 'scroll',
           display: 'flex',
           flexWrap: 'wrap',
