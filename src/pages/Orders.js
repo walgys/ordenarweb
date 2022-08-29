@@ -15,7 +15,7 @@ import moment from 'moment';
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const { user } = useContext(AppContext);
-  
+
   useEffect(() => {
     getOrders(user).then((products) => setOrders(products));
   }, []);
@@ -31,7 +31,6 @@ const Orders = () => {
           maxWidth: '800px',
           alignSelf: 'center',
           padding: '1rem',
-          marginTop: '0.5rem'
         }}
       > 
         {orders.map((order) => (
