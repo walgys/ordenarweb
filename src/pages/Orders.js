@@ -1,13 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import TopBar from '../components/TopBar';
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Container,
   List,
   ListItem,
-  Paper,
   Typography,
 } from '@mui/material';
 import { getOrders } from '../global/data';
@@ -18,6 +15,7 @@ import moment from 'moment';
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const { user } = useContext(AppContext);
+  
   useEffect(() => {
     getOrders(user).then((products) => setOrders(products));
   }, []);

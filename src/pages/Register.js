@@ -1,5 +1,5 @@
 import { Button, Paper, TextField, Typography } from '@mui/material';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Formik } from 'formik';
 import { colors } from '../global/styles';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -31,7 +31,7 @@ const Register = () => {
         if(user){
             navigate('/home', {replace: true})
         }
-      }, [user])
+      }, [user,navigate])
       
   return (
     <>

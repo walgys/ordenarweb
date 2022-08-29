@@ -1,14 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  IconButton,
-  Paper,
-  TextField,
-  Typography,
-} from '@mui/material';
+import { Button, Paper, TextField, Typography } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import { colors } from '../global/styles';
 import {
@@ -32,7 +23,7 @@ const Login = () => {
       navigate('/home', { replace: true });
     }
     setReady(true);
-  }, [user]);
+  }, [user, navigate]);
 
   const doLogin = async () => {
     try {
@@ -85,7 +76,21 @@ const Login = () => {
                 borderRadius: '20px',
               }}
             >
-              <div style={{backgroundColor: colors.buttons, width: '100%' , maxWidth: '250px', alignSelf: 'center', borderRadius: '20px', overflow: 'hidden' }}><Image src={require('../assets/logo.png')} style={{objectFit: 'contain', height: '10vh'}} /></div>
+              <div
+                style={{
+                  backgroundColor: colors.buttons,
+                  width: '100%',
+                  maxWidth: '250px',
+                  alignSelf: 'center',
+                  borderRadius: '20px',
+                  overflow: 'hidden',
+                }}
+              >
+                <Image
+                  src={require('../assets/logo.png')}
+                  style={{ objectFit: 'contain', height: '10vh' }}
+                />
+              </div>
               <Typography textAlign={'center'}>
                 Ingrese su usuario y contraseña
               </Typography>
@@ -106,24 +111,40 @@ const Login = () => {
                 sx={{ alignSelf: 'center' }}
               />
               <Button
-                sx={{ width: '100%' , maxWidth: '200px', alignSelf: 'center' ,margin: '1rem 0px 0rem 0px'  }}
-                variant='contained'
+                sx={{
+                  width: '100%',
+                  maxWidth: '200px',
+                  alignSelf: 'center',
+                  margin: '1rem 0px 0rem 0px',
+                }}
+                variant="contained"
                 onClick={() => doLogin()}
               >
                 Ingresar
               </Button>
-             
+
               <Button
-                variant='contained'
-                color='error'
-                sx={{ width: '100%' , maxWidth: '200px', alignSelf: 'center', padding: '0.5rem 1rem 0.5rem 1rem', margin: '1rem 0rem 1rem 0rem'  }}
+                variant="contained"
+                color="error"
+                sx={{
+                  width: '100%',
+                  maxWidth: '200px',
+                  alignSelf: 'center',
+                  padding: '0.5rem 1rem 0.5rem 1rem',
+                  margin: '1rem 0rem 1rem 0rem',
+                }}
                 onClick={() => googleSignIn()}
               >
                 <GoogleIcon />
                 oogle
               </Button>
-              <Button onClick={()=>navigate('/register')} sx={{ width: '100%' , maxWidth: '200px', alignSelf: 'center'}} variant='outlined'>Regístrese</Button>
-
+              <Button
+                onClick={() => navigate('/register')}
+                sx={{ width: '100%', maxWidth: '200px', alignSelf: 'center' }}
+                variant="outlined"
+              >
+                Regístrese
+              </Button>
             </div>
           </div>
         </Paper>

@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Orders from './pages/Orders';
@@ -11,11 +11,10 @@ import { CartContextProvider } from './context/EcommerceContext';
 import { AppContext } from './context/AppContext';
 import TopBar from './components/TopBar';
 import BottomBar from './components/BottomBar';
-import { Container } from '@mui/system';
-import { Alert, Paper, Snackbar } from '@mui/material';
-import { colors } from './global/styles';
+
+import { Alert, Snackbar } from '@mui/material';
+
 import Register from './pages/Register';
-import { updateCreateAccount } from './global/data';
 
 const ProtectedRoute = ({ user, children }) => {
   if (!user) {
@@ -28,8 +27,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [ready, setReady] = useState(false);
   const [open, setOpen] = useState(false);
-  const [snackText, setSnackText] = useState('')
-  const [snackType, setSnackType] = useState('error')
+  const [snackText, setSnackText] = useState('');
+  const [snackType, setSnackType] = useState('error');
   const handleClick = () => {
     setOpen(true);
   };
@@ -47,7 +46,9 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <AppContext.Provider value={{ user, setSnackText, handleClick, setSnackType }}>
+      <AppContext.Provider
+        value={{ user, setSnackText, handleClick, setSnackType }}
+      >
         <CartContextProvider>
           <div
             style={{
@@ -68,7 +69,6 @@ function App() {
                 borderLeft: '1px solid gainsboro',
                 borderRight: '1px solid gainsboro',
                 backgroundColor: 'white',
-                flex: 1
               }}
             >
               {user && <TopBar />}
@@ -115,22 +115,25 @@ function App() {
                       </ProtectedRoute>
                     }
                   />
-                  <Route
-                    path="/register"
-                    element={
-                        <Register />
-                    }
-                  />
+                  <Route path="/register" element={<Register />} />
                 </Routes>
               )}
               {user && <BottomBar />}
             </div>
           </div>
-          <Snackbar open={open} autoHideDuration={6000} onClose={()=>setOpen(false)}>
-        <Alert onClose={()=>setOpen(false)} severity={snackType} sx={{ width: '100%' }}>
-          {snackText}
-        </Alert>
-      </Snackbar>
+          <Snackbar
+            open={open}
+            autoHideDuration={6000}
+            onClose={() => setOpen(false)}
+          >
+            <Alert
+              onClose={() => setOpen(false)}
+              severity={snackType}
+              sx={{ width: '100%' }}
+            >
+              {snackText}
+            </Alert>
+          </Snackbar>
         </CartContextProvider>
       </AppContext.Provider>
     </BrowserRouter>

@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-
-import { Paper, Typography } from '@mui/material';
 import { getProducts } from '../global/data';
 import CategoryBar from '../components/CategoryBar';
 import ProductCard from '../components/ProductCard';
@@ -20,7 +18,6 @@ const Home = () => {
       <CategoryBar
         categoryIndex={categoryIndex}
         setCategoryIndex={setCategoryIndex}
-        style={{ flex: 0.5 }}
       />
       <div
         className="no-scroll"

@@ -4,7 +4,6 @@ import {
   collection,
   query,
   where,
-  onSnapshot,
   updateDoc,
   doc,
   addDoc,
@@ -126,7 +125,8 @@ export const purchaseCart = async (user, cart) => {
             outOfStock.push({ id: foundProduct.id, ...data });
           }
         } else {
-          throw { msg: 'invalid product' };
+            const err = { msg: 'invalid product' };
+          throw new err();
         }
       });
       if (outOfStock.length === 0) {
@@ -146,7 +146,8 @@ export const purchaseCart = async (user, cart) => {
           timestamp: Date.now(),
         });
       } else {
-        throw { msg: 'out of stock' };
+        const err = { msg: 'out of stock' };
+        throw new err();
       }
     }).catch((err) => {
       result = 'outOfStock';

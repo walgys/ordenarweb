@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import TopBar from '../components/TopBar';
-import { Button, Paper, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { CartContext } from '../context/EcommerceContext';
 import { purchaseCart } from '../global/data';
 import { actions } from '../reducers/EcommerceReducer';
