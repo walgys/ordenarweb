@@ -43,8 +43,7 @@ const Register = () => {
       <Paper
           elevation={2}
           style={{
-            height: '60vh',
-            marginTop: '25vh',
+            height: '100%',
             backgroundColor: colors.buttons,
           }}
         >
