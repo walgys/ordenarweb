@@ -50,8 +50,7 @@ const Login = () => {
         <Paper
           elevation={2}
           style={{
-            height: '60vh',
-            marginTop: '10vh',
+            height: '100%',
             padding: '5vh 0vh 5vh 0vh',
             backgroundColor: colors.buttons,
           }}

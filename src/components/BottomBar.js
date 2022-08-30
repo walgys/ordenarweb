@@ -26,7 +26,7 @@ export default function BottomBar() {
   const navigate = useNavigate();
   return (
     <Paper
-      sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, width: '100%', maxWidth: '1200px' }}
+      sx={{ position: 'fixed', bottom: 0, width: '100%', maxWidth: '1200px' }}
       elevation={3}
     >
       <BottomNavigation

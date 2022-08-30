@@ -26,8 +26,8 @@ const Home = () => {
           overflow: 'scroll',
           display: 'flex',
           flexWrap: 'wrap',
-          height: '100%',
           justifyContent: 'center',
+          marginBottom: '56px'
         }}
       >
         {products

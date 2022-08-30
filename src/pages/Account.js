@@ -48,7 +48,7 @@ const Account = () => {
               <Paper
                 elevation={2}
                 style={{
-                  height: '50vh',
+                  height: '100%',
                   backgroundColor: colors.buttons,
                 }}
               >
@@ -57,7 +57,7 @@ const Account = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    height: '100%',
+                    
                   }}
                 >
                   <div
