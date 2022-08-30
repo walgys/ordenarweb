@@ -61,7 +61,7 @@ const Register = () => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 padding: '5vh',
-                margin: '50px',
+                margin: '100px 50px 100px 50px',
                 backgroundColor: 'white',
                 height: '100%',
                 borderRadius: '20px',
